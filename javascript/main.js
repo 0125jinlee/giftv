@@ -4,19 +4,17 @@
 	
 document.querySelector('.js-go').addEventListener('click', function(){
 	var input = document.querySelector('input').value;
+	
 	inputToUrl(input);
-
 });
 
 document.querySelector('.js-userinput').addEventListener('keyup', function(e){
-
 	var input = document.querySelector('input').value;
 
 	//if the key ENTER is pressed then execute
 	if(e.which === 13) {
 		inputToUrl(input);
 	}
-
 });
 
 /* 2. Do the data stuff with the API */
@@ -31,27 +29,29 @@ function inputToUrl(input) {
 	GiphyAJAXCall.send();
 
 	GiphyAJAXCall.addEventListener('load', function(e){
-
 		var data = e.target.response;
 		pushToDOM(data);
-
 	});
 };
 
 /* 3. Show me random 5 GIFs */
 
 function pushToDOM(input){
-
 	var response = JSON.parse(input);
+	console.log(response)
 	var imageUrls = response.data;
 	var container = document.querySelector(".js-container");
-	var counter = 0;
 
-		while (counter < 5) {
-			var src = imageUrls[Math.floor(Math.random() * imageUrls.length)].images.fixed_height.url;
+	for(var i = 0; i < 5; i++) {
+		setDelay(i);
+	}
+
+	function setDelay(i){
+		container.innerHTML = '';
+		setTimeout(function() {
+			var src = imageUrls[Math.floor(Math.random() * imageUrls.length)].images.original.url;
 			container.innerHTML = "<img src=\"" + src + "\" class=\"container-image\">";
-			setTimeout()
-			counter++;
-		};
+		}, 5000 * i);
+	}
 }
 	
