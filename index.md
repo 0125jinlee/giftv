@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Giphy TV</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="container container-padding40">
+        <h1>ENJOY FIVE RANDOM GIFs!</h1>
+
+        <input type="text" class="js-userinput container-textinput">
+        <button class="js-go container-button">Go!</button>
+      </div>
+
+      <div class="container container-padding50 js-container">
+
+      </div>
+
+      <script src="javascript/main.js"></script>
+    </div>
+  </body>
+
+</html>
