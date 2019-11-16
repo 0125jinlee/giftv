@@ -21,7 +21,7 @@ document.querySelector('.js-userinput').addEventListener('keyup', function(e){
 
 function inputToUrl(input) {
 	input = input.replace(' ', '+');
-	var url = "http://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=khIUaURoS1pxmiQJpw2rmkoKcmwEcCJi"
+	var url = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=khIUaURoS1pxmiQJpw2rmkoKcmwEcCJi"
 
 	// AJAX Request
 	var GiphyAJAXCall = new XMLHttpRequest();
